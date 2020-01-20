@@ -1,8 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
-	<bean id="tv" class="tommy.spring.polymorphism.SamsungTV" />	
+	<!-- <bean id="tv" class="tommy.spring.polymorphism.SamsungTV" p:speaker-ref="sony" p:price="280000"></bean>	
+	<bean id="sony" class="tommy.spring.polymorphism.SonySpeaker"></bean>
+	<bean id="apple" class="tommy.spring.polymorphism.AppleSpeaker"></bean> -->
 	
-</beans>
+	<!-- <bean id="collectionBean" class="tommy.spring.collection.CollectionBean">
+		<property name="addressList">
+			<map>
+				<entry>
+					<key><value>홍길동</value></key>
+					<value>율도국</value>
+				</entry>
+				<entry>
+					<key><value>손오공</value></key>
+					<value>화과산</value>
+				</entry>
+			</map>
+		</property>
+	</bean>-->
+	
+	<context:component-scan base-package="tommy.spring.polymorphism"></context:component-scan>
+	
+	<bean id="apple" class="tommy.spring.polymorphism.AppleSpeaker"></bean>
+</beans> 
