@@ -25,7 +25,11 @@
 		</property>
 	</bean>-->
 	
-	<context:component-scan base-package="tommy.spring.polymorphism"></context:component-scan>
+	<!-- <context:component-scan base-package="tommy.spring.polymorphism"></context:component-scan>
 	
-	<bean id="apple" class="tommy.spring.polymorphism.AppleSpeaker"></bean>
+	<bean id="apple" class="tommy.spring.polymorphism.AppleSpeaker"></bean> -->
+	<bean id="myLifeBean" class="tommy.spring.lifecycle.MyLifeBeanImpl" init-method="init">
+		<property name="greeting"><value>Hello, </value></property>
+	</bean>
+	<bean class="tommy.spring.lifecycle.CustomBeanPostProcessor"/>
 </beans> 
